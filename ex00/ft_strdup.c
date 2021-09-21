@@ -14,9 +14,20 @@
 
 char	*ft_strdup(char *src)
 {
+	int	i;
+	int	lng;
 	char	*p;
-	p = (char *)malloc(sizeof(char));
-	p = src;
+
+	lng = 0;
+	while (src[lng] != '\0')
+		lng ++;
+	p = (char *)malloc(sizeof(char) * lng);
+	i = 0;
+	while (i < lng)
+	{
+		p[i] = src[i];
+		i ++;
+	}
 	return (p);
 }
 
@@ -24,5 +35,6 @@ char	*ft_strdup(char *src)
 
 int  main()
 {
-printf("%s", ft_strdup("chartese"));
+
+	printf("%s", ft_strdup("chartese"));
 }
