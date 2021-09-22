@@ -6,7 +6,7 @@
 /*   By: cbukuba <cbukuba@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:43:47 by cbukuba           #+#    #+#             */
-/*   Updated: 2021/09/21 12:43:52 by cbukuba          ###   ########.fr       */
+/*   Updated: 2021/09/22 18:48:48 by cbukuba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	*ft_range(int min, int max)
 	int	*tab;
 
 	if (min >= max)
-		return (NULL);
-	tab = malloc(sizeof(*tab) * (max - min));
+		return (0);
+	tab = malloc(sizeof(int) * (max - min));
 	i = 0;
 	while (min < max)
 	{
@@ -30,16 +30,22 @@ int	*ft_range(int min, int max)
 	return (tab);
 }
 
-// #include <stdio.h>
+ #include <stdio.h>
 
-// int main()
-// {
-// 	int *tab = ft_range(7, 6);
-// 	int i = 0;
+int main()
+{
+	int max = 6;
+	int min = 7;
+	int *tab = ft_range(min, max);
+	int i = 0;
 
-// 	 while (tab[i] != 0)
-// 	{	
-// 		printf("%d", tab[i]);
-// 		i ++;
-// 	}
-// }
+	if (min >= max)
+		return(tab[0]);
+	 while (tab[i])
+	{	
+		printf("%d", tab[i]);
+		i ++;
+	}
+	free(tab);
+	return (0);
+}
