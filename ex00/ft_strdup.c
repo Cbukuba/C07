@@ -14,14 +14,15 @@
 
 char	*ft_strdup(char *src)
 {
-	int	i;
-	int	lng;
+	int		i;
+	int		lng;
 	char	*p;
 
 	lng = 0;
 	while (src[lng] != '\0')
 		lng ++;
-	if (!(p = (char *)malloc(sizeof(char) * lng)))
+	p = (char *)malloc(sizeof(char) * lng + 1);
+	if (!p)
 		return (NULL);
 	i = 0;
 	while (i < lng)

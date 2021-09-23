@@ -41,7 +41,7 @@ int	*ft_range(int min, int max)
 //     int        i;
 //     int        *ret;
 
-//     min = 13;
+//     min = 9;
 //     max = 12;
 //     i = 0;
 //     ret = ft_range(min, max);
