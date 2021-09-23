@@ -17,9 +17,11 @@ int	*ft_range(int min, int max)
 	int	i;
 	int	*tab;
 
-	if (min >= max)
-		return (0);
 	tab = malloc(sizeof(int) * (max - min));
+	if (min >= max)
+		return (NULL);
+	if (!tab)
+		return (NULL);
 	i = 0;
 	while (min < max)
 	{
@@ -30,22 +32,25 @@ int	*ft_range(int min, int max)
 	return (tab);
 }
 
- #include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-	int max = 6;
-	int min = 7;
-	int *tab = ft_range(min, max);
-	int i = 0;
+// int    main()
+// {
+//     int        max;
+//     int        min;
+//     int        i;
+//     int        *ret;
 
-	if (min >= max)
-		return(tab[0]);
-	 while (tab[i])
-	{	
-		printf("%d", tab[i]);
-		i ++;
-	}
-	free(tab);
-	return (0);
-}
+//     min = 13;
+//     max = 12;
+//     i = 0;
+//     ret = ft_range(min, max);
+//     if (!ret)
+//         printf("NULL");
+//     while (i < (max - min))
+//     {
+//         printf("tab[%d] = %d\n", i, ret[i]);
+//         i++;
+//     }
+//     free(ret);
+// }

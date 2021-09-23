@@ -13,41 +13,47 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-int ft_ultimate_range(int **range, int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
-	int	*tab;
-	int	lng = 0;
 
-	*range = tab ;
-	while (tab[lng])
-		lng ++;
-	tab = malloc(sizeof(*tab) * (lng + 1));
+	if (min >= max)
+	{
+		*range = NULL;
+		return (0);
+	}
+	*range = malloc(sizeof(int) * (max - min));
+	if (!*range)
+		return (-1);
 	i = 0;
 	while (min < max)
 	{
-		tab[i] = min;
+		range[0][i] = min;
 		i ++;
 		min ++;
 	}
-	return (**range);
+	return (i);
 }
 
-#include <stdio.h>
-int main()
-{
-	int **rg;
-	int *tab;
-	*rg = tab;
-	*tab = ft_ultimate_range(rg, 3, 7);
-	int i = 0;
+// #include <stdio.h>
 
-	 while (tab[i])
-	{	
-		printf("%d", tab[i]);
-		i ++;
-	}
-	free(tab);
-	return (0);
+// int    main(void)
+// {
+//     int        max;
+//     int        min;
+//     int        i;
+//     int        *tab;
 
-}
+//     min = -10;
+//     max = 10;
+//     i = 0;
+//     printf("ft_ultimate_range -> |%d|\n", ft_ultimate_range(&tab, min, max));
+//     if (!tab)
+//         printf("NULL");
+//     while (i < (max - min))
+//     {
+//         printf("tab[%d] = %d\n", i, tab[i]);
+//         i++;
+//     }
+//     free(tab);
+// }
