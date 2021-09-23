@@ -83,11 +83,28 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	return (str);
 }
+
 // #include <stdio.h>
-// int	main(int argc, char **argv)
-// {	
-// 	argc = 2;
-// 	argv[0] = "Salut";
-// 	argv[1] = "Bg";
-// 	printf("%s", ft_strjoin(argc, argv, ":;"));
+
+// int    main(void)
+// {
+//     char    *array[] = {"Un", "Deux", "Trois", "Quatre"};
+//     int        size = 0;
+//     char    *sep = "_-<=>-_";
+//     char    *ret;
+
+//     ret = ft_strjoin(size, array, sep);
+//     if (!ret)
+//         printf("NULL!!\n");
+//     else if (!size)
+//     {
+//         free(ret);
+//         printf("FREE!!\n");
+//     }
+//     else
+//     {
+//         printf("ret = |%s|\n", ret);
+//         free(ret);
+//     }
+//     return (0);
 // }
